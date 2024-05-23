@@ -105,7 +105,7 @@ function initFormHandler() {
 	
 
 	// B10. TODO - Get a reference to the "Clear Local Storage" button
-	const clearLocalStorage = document.querySelector('.clear-storage')
+	const clearLocalStorage = document.querySelector(".danger");
 	// B11. TODO - Add a click event listener to clear local storage button
 	clearLocalStorage.addEventListener('click', () => {
 		// Steps B12 & B13 will occur inside the event listener from step B11
@@ -113,7 +113,9 @@ function initFormHandler() {
 		localStorage.clear();
 		// B13. Delete the contents of <main>
 		const main = document.querySelector('main');
-		main.innerHTML = '';
+		while(main.firstChild){
+			main.removeChild(main.firstChild);
+		}
 	});
 	
 	
